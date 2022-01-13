@@ -11,7 +11,7 @@ class script(object):
 ✯ 𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁: 𝙷𝙴𝚁𝙾𝙺𝚄
 ✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v1.0.1 [ 𝙱𝙴𝚃𝙰 ]"""
     SOURCE_TXT = """<b>NOTE:</b>
-- Eva Maria is a open source project. 
+- Poke X is a open source project. 
 - Source - https://github.com/gtxprimeX/poke_upd 
 
 <b>DEVS:</b>
@@ -21,7 +21,7 @@ class script(object):
 - Filter is the feature were users can set automated replies for a particular keyword and EvaMaria will respond whenever a keyword is found the message
 
 <b>NOTE:</b>
-1. <a href=https://t.me/{}>{}</a> should have admin privillage.
+1. I should have admin privillage.
 
 <b>Commands and Usage:</b>
 • /filter - <code>add a filter in chat</code>
@@ -65,7 +65,7 @@ class script(object):
     EXTRAMOD_TXT = """Help: <b>Extra Modules</b>
 
 <b>NOTE:</b>
-these are the extra features of Eva Maria
+these are the extra features of Poke X
 
 <b>Commands and Usage:</b>
 • /id - <code>get id of a specified user.</code>
