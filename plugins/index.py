@@ -169,9 +169,16 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
                 if not media:
                     unsupported += 1
                     continue
+                if message.media in ["photo"]:
+                media.file_type = message.media
+                media.caption = message.caption
+                media.media.file_name = message.caption
+                aynav, vnay = await save_file(media)
+                elif
                 media.file_type = message.media
                 media.caption = message.caption
                 aynav, vnay = await save_file(media)
+                
                 if aynav:
                     total_files += 1
                 elif vnay == 0:
