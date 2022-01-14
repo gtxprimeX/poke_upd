@@ -171,8 +171,7 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
                     continue    
                 media.file_type = message.media
                 media.caption = message.caption
-                media.file_name = message.caption
-                media.mime_type = ["image/gif", "video/mp4"]  
+            
                 
                 aynav, vnay = await save_file(media)
                 if aynav:
