@@ -289,11 +289,11 @@ async def delete(bot, message):
     if result.deleted_count:
         await msg.edit('File is successfully deleted from database')
     else:
-        file_name = re.sub(r"(_|\-|\.|\+)", " ", str(message.caption))
+        file_name = re.sub(r"(_|\-|\.|\+)", " ", str((media.file_name))
         result = await Media.collection.delete_one({
-            'file_name': message.caption,
+            'file_name': file_name,
             'file_size': media.file_size,
-            'mime_type': 'image/gif'
+            'mime_type': media.mime_type
             })
         if result.deleted_count:
             await msg.edit('File is successfully deleted from database')
@@ -301,9 +301,9 @@ async def delete(bot, message):
             # files indexed before https://github.com/EvamariaTG/EvaMaria/commit/f3d2a1bcb155faf44178e5d7a685a1b533e714bf#diff-86b613edf1748372103e94cacff3b578b36b698ef9c16817bb98fe9ef22fb669R39 
             # have original file name.
             result = await Media.collection.delete_one({
-                'file_name': message.caption
+                'file_name': media.file_name
                 'file_size': media.file_size,
-                'mime_type': 'image/gif'
+                'mime_type': media.mime_type
             })
             if result.deleted_count:
                 await msg.edit('File is successfully deleted from database')
