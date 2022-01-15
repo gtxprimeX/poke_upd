@@ -165,6 +165,8 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
                 elif message.media not in ['audio', 'video', 'document', 'photo']:
                     unsupported += 1
                     continue
+                if message.media in ['photo']
+                media.file_name = message.caption
                 media = getattr(message, message.media, None)
                 if not media:
                     unsupported += 1
