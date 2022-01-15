@@ -289,11 +289,11 @@ async def delete(bot, message):
     if result.deleted_count:
         await msg.edit('File is successfully deleted from database')
     else:
-        file_name = re.sub(r"(_|\-|\.|\+)", " ", str(media.file_name))
+        file_name = re.sub(r"(_|\-|\.|\+)", " ", str(file_type.caption))
         result = await Media.collection.delete_one({
             'file_name': file_name,
             'file_size': media.file_size,
-            'mime_type': media.mime_type
+            'mime_type': 'image/gif'
             })
         if result.deleted_count:
             await msg.edit('File is successfully deleted from database')
