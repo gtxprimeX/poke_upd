@@ -166,8 +166,15 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
                     unsupported += 1
                     continue
                 if message.media in ['photo']:
-                     media.file_name = message.caption
-                     media.mime_type = 'image/gif'
+                media = getattr(message, message.media, None)
+                if not media:
+                    unsupported += 1
+                    continue
+                media.file_name = message.caption
+                media.mime_type = 'image/gif'
+                media.file_type = message.media
+                media.caption = message.caption
+                else: 
                 media = getattr(message, message.media, None)
                 if not media:
                     unsupported += 1
